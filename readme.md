@@ -38,7 +38,7 @@ If you're using Docker Desktop, you will see the Python image created in the ima
 To start the Docker Compose, ensure your terminal is in the main folder and execute the following command:
 
 ``` bash
-docker-compose up .
+docker-compose up
 ```
 
 You'll observe two images created and two containers created within a default network, typically named *docker_sql_default*. You can view the network name by executing the command `docker network ls` in your terminal.
@@ -65,13 +65,13 @@ URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yell
 docker run -it \
     --network=docker_sql_default \
     taxi_ingest:v001 \
-        --user=root \
-        --password=root \
-        --host=pgdatabase \
-        --port=5432 \
-        --db=ny_taxi \ 
-        --table_name=yellow_taxi_trips \
-        --url="${URL}"
+    --user=root \
+    --password=root \
+    --host=pgdatabase \
+    --port=5432 \
+    --db=ny_taxi \
+    --table_name=yellow_taxi_trips \
+    --url="${URL}"
 ```
 
 Note that you can practice with different datasets by modifying the script.
